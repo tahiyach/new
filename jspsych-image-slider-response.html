@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script type="text/javascript" src="lib/vendors/jspsych-6.1.0/jspsych.js"></script>
+  <link rel="stylesheet" type="text/css" href="lib/vendors/jspsych-6.1.0/css/jspsych.css"/>
+
+  <script type="text/javascript" src="lib/vendors/jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+  <script type="text/javascript" src="lib/vendors/jspsych-6.1.0/plugins/jspsych-image-slider-response.js"></script>
+
+  <script type="text/javascript" src="lib/vendors/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="lib/jspsych-pavlovia-3.2.5.js"></script>
+
+  <style>
+    img {
+      width: 695px;
+    }
+  </style>
+</head>
+<body>
+<script>
+
+  /* create timeline */
+  var timeline = [];
+
+  /* init connection with pavlovia.org */
+  var pavlovia_init = '{'
+    type: "pavlovia",
+    command: "init"
+  '}';
+  timeline.push(pavlovia_init);
+
+  var welcome_trial = {
+    type: 'html-keyboard-response',
+    stimulus: 'Welcome to our experiment. Press any key to begin.'
+  }
+
+  var trial_1 = {
+    type: 'image-slider-response',
+    stimulus: 'img/TrainingSymbolic.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: false,
+    prompt: '<p>In the following trials, you will use the slider to indicate where the quantity above is found on the line.</p>'+
+      '<p>The display above is a practice trial and has already been completed for you. In the next trials, you will move the slider yourself.</p>'+
+      '<p>Please press continue when you are ready to begin the experiment.</p>'
+  }
+
+  var trial_2 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic2.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>'
+  }
+
+  var trial_3 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic3.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+  }
+
+  var trial_4 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic4.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+  }
+
+  var trial_5 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic5.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+  }
+
+  var trial_6 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic6.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+  }
+
+  var trial_7 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic7.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+  }
+
+  var trial_8 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic8.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+  var trial_9 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic9.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+  }
+
+  var trial_10 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic10.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+  }
+
+  var trial_11 = {
+    type: 'image-slider-response',
+    stimulus: 'img/Symbolic11.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: true,
+    prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+  }
+
+  var trial_12 = {
+    type: 'image-slider-response',
+    stimulus: 'img/TrainingNonsymbolic.jpg',
+    labels: ['', ''],
+    slider_width: 405,
+    require_movement: false,
+    prompt: '<p>In the following trials, you will use the slider to indicate where the quantity above is found on the line.</p>'+
+      '<p>The display above is a practice trial and has already been completed for you. In the next trials, you will move the slider yourself.</p>'+
+      '<p> Please press continue when you are ready to begin the experiment.</p>'
+  }
+
+    var trial_13 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic2.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_14 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic3.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_15 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic4.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_16 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic5.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_17 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic6.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_18 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic7.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_19 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic8.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_20 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic9.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_21 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic10.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var trial_22 = {
+      type: 'image-slider-response',
+      stimulus: 'img/Nonsymbolic11.jpg',
+      labels: ['', ''],
+      slider_width: 405,
+      require_movement: true,
+      prompt: '<p>Drag the slider to the location where this quantity is on the line.</p>',
+    }
+
+    var ending_trial = {
+      type: 'html-keyboard-response',
+      stimulus: 'You have reached the end of this part of the experiment! Press any key to continue to the next part of the experiment.',
+    }
+
+  jsPsych.init({
+    timeline: [welcome_trial, trial_1, trial_2, trial_3, trial_4, trial_5, trial_6, trial_7, trial_8, trial_9, trial_10, trial_11, trial_12, trial_13, trial_14, trial_15, trial_16, trial_17, trial_18, trial_19, trial_20, trial_21, trial_22, ending_trial],
+    show_progress_bar: true,
+    on_finish: function() {
+      jsPsych.data.get();
+    },
+  });
+
+  /* finish connection with pavlovia.org */
+  var pavlovia_finish = '{'
+    type: "pavlovia",
+    command: "finish"
+  '}';
+  timeline.push(pavlovia_finish);
+
+  /* start the experiment */
+  jsPsych.init('{'
+    timeline: timeline,
+    [...]
+  '}');
+
+</script>
+
+</body>
+
+</html>
